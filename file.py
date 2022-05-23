@@ -1,5 +1,4 @@
 def greeter(function_to_decorate):
-    @wraps(function_to_decorate)
     def real_decorator(self):
         data = function_to_decorate(self).split(' ')
         data = [element.capitalize() for element in data]
@@ -12,7 +11,6 @@ def greeter(function_to_decorate):
 
 
 def sums_of_str_elements_are_equal(function_to_decorate):
-    @wraps(function_to_decorate)
     def real_decorator(self):
         sum_list = []
         data = function_to_decorate(self).split()
@@ -46,7 +44,6 @@ def sums_of_str_elements_are_equal(function_to_decorate):
 def format_output(*arguments):
 
     def real_decorator(function_to_decorate):
-        @wraps(function_to_decorate)
         def wrapper(*args, **kwargs):
 
             data = function_to_decorate(*args, **kwargs)
